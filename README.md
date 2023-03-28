@@ -30,7 +30,7 @@ Unauthorized use or access is regarded as a criminal act is subject to civil and
     value_color_bg = None
 ```
 
-This generates an output:
+This generates an output(Color not shown):
 ```bash
 
        .__                      .__           .__       .___             
