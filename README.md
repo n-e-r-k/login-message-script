@@ -3,7 +3,7 @@ A customizable python script used to display login information.
 
 ## Current features:
 - Configured to display ASCII logo
-- Customizeable login message
+- Customizable login message
 - Assignable foreground and background colors for both key and value
 - Informs the user the $SSH_CLIENT if applicable
 
