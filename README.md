@@ -63,21 +63,7 @@ Unauthorized use or access is regarded as a criminal act is subject to civil and
 ```
 
 This generates an output(Color not shown):
-```bash
-[2J[36m       .__                      .__           .__       .___             
-______ |  | _____    ____  ____ |  |__   ____ |  |    __| _/___________  
-\____ \|  | \__  \ _/ ___\/ __ \|  |  \ /  _ \|  |   / __ |/ __ \_  __ \ 
-|  |_> >  |__/ __ \  \__\  ___/|   Y  (  <_> )  |__/ /_/ \  ___/|  | \/ 
-|   __/|____(____  /\___  >___  >___|  /\____/|____/\____ |\___  >__|    
-|__|             \/     \/    \/     \/                  \/    \/       
-[0m[0m[37mConnected to: [0m[0m[35mlocalhost [0m[0m[37m through [0m[0m[35m 127.0.0.1
-[0m[0m[37mSystem: [0m[0m[35m22.2.0 arm64
-[0m[0m[37mCurrent time: [0m[0m[35mWed, 29 Mar 2023 22:59:08
-[0m[0m[31m*IMPORTANT*
-[0m[0m[35mAccess to this system is for authorized persons only. 
-Unauthorized use or access is regarded as a criminal act is subject to civil and criminal prosecution.
-[0m[0m
-```
+<img width="730" alt="Screenshot 2023-03-29 at 6 07 32 PM" src="https://user-images.githubusercontent.com/101080594/228687737-b4652162-736e-41ce-b3b2-5bdb92e4c965.png">
 
 ## Current roadmap:
 Check the TODO.md to see the current progress on development.
