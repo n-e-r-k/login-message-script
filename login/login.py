@@ -29,45 +29,41 @@ class Login:
 
         self.time = time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime())
 
-
-
-    def display(self, key_color_fg, value_color_fg, key_color_bg = None, value_color_bg = None):
-        # --- Logo ---
-        self.print_color(Config.logo, Config.logo_color_fg, Config.logo_color_bg)
-
-        # --- Connected to ---
-        self.print_color("Connected to: ", key_color_fg, key_color_bg, False)
+    def logo():
+        self.print_color(Config.logo, Config.l_color)
+        return
+    
+    def connected_to():
+        self.print_color("Connected to: ", Config.k_color, False)
         if self.client != "localhost":
-            self.print_color(self.os[1], value_color_fg, value_color_bg, False)
-            self.print_color(" through ", key_color_fg, key_color_bg, False)
-            self.print_color(self.client, value_color_fg, value_color_bg, True)
+            self.print_color(self.os[1], Config.v_color, False)
+            self.print_color(" through ", Config.k_color, False)
+            self.print_color(self.client, Config.v_color, True)
         else:
-            self.print_color(self.os[1], value_color_fg, value_color_bg, True)
-
-        # --- System ---
-        
-        self.print_color("System: ", key_color_fg, key_color_bg, False)
-        self.print_color(self.os[2] + " " + self.os[4], value_color_fg, value_color_bg, True)
-
-        # --- Current time ---
-        self.print_color("Current time: ", key_color_fg, key_color_bg, False)
-        self.print_color(self.time, value_color_fg, value_color_bg, True)
-
-        # --- Message ---
-        
-        if Config.important == True:
-            self.print_color("*IMPORTANT*", FG_Colors.Red, None)
-        self.print_color(Config.message, value_color_fg, value_color_bg, True)
-        
+            self.print_color(self.os[1], Config.v_color, True)
         return
 
+    def system():
+        self.print_color("System: ", Config.k_color, False)
+        self.print_color(self.os[2] + " " + self.os[4], Config.v_color, True)
+        return
 
+    def current_time():
+        self.print_color("Current time: ", Config.k_color, False)
+        self.print_color(self.time, Config.v_color, True)
+        return
+    
+    def message():
+        if Config.important == True:
+            self.print_color("*IMPORTANT*", (FG_Colors.Red, None))
+        self.print_color(Config.message, Config.v_color, True)
+        return
 
-    def print_color(self, text, fg_color = None, bg_color = None, newline = True):
+    def print_color(self, text, color = None, newline = True):
         if fg_color != None:
-            print(fg_color.value, end="")
+            print(color[0].value, end="")
         if bg_color != None:
-            print(bg_color.value, end="")
+            print(color[1].value, end="")
         
         if newline != False:
             print(text)
@@ -95,7 +91,4 @@ class Login:
 # --- Main ---
 
 if __name__ == "__main__":
-    login = Login()
-
-    login.clear()
-    login.display(Config.key_color_fg, Config.value_color_fg, Config.key_color_bg, Config.value_color_bg)
+    Config.display()
