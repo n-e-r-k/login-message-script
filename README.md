@@ -63,7 +63,7 @@ Unauthorized use or access is regarded as a criminal act is subject to civil and
 ```
 
 This generates an output(Color not shown):
-```ASCII
+```bash
 [2J[36m       .__                      .__           .__       .___             
 ______ |  | _____    ____  ____ |  |__   ____ |  |    __| _/___________  
 \____ \|  | \__  \ _/ ___\/ __ \|  |  \ /  _ \|  |   / __ |/ __ \_  __ \ 
