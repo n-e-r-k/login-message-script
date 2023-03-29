@@ -27,19 +27,24 @@ ______ |  | _____    ____  ____ |  |__   ____ |  |    __| _/___________  \n\
     message = "Access to this system is for authorized persons only. \n\
 Unauthorized use or access is regarded as a criminal act is subject to civil and criminal prosecution."
 
-    # Display configuration
     def display():
         # Create Login object and clear screen
         login = Login()
         login.clear()
 
         # Main display configuration
-        login.logo()
 
-        login.connected_to()
+        # --- Logo ---
+        login.logo(Config.logo, Config.l_color)
 
-        login.system()
+        # --- Connected to (Hostname / SSH_CLIENT) ---
+        login.connected_to(Config.k_color, Config.v_color)
 
-        login.current_time()
-        
-        login.message()
+        # --- System Information ---
+        login.system(Config.k_color, Config.v_color)
+
+        # --- Current Time ---
+        login.current_time(Config.k_color, Config.v_color)
+
+        # --- Message ---
+        login.message(Config.message, Config.v_color, Config.important)

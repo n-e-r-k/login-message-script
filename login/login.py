@@ -1,11 +1,10 @@
-# login.py - Nerk Cypher
+# login.py library - Nerk Cypher
 
 # --- lib import ---
 import os
 import re
 import time
 
-from config import Config
 from colordef import FG_Colors, BG_Colors
 
 class Login:
@@ -29,40 +28,50 @@ class Login:
 
         self.time = time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime())
 
-    def logo():
-        self.print_color(Config.logo, Config.l_color)
-        return
-    
-    def connected_to():
-        self.print_color("Connected to: ", Config.k_color, False)
-        if self.client != "localhost":
-            self.print_color(self.os[1], Config.v_color, False)
-            self.print_color(" through ", Config.k_color, False)
-            self.print_color(self.client, Config.v_color, True)
+    def set_color(self, key_or_value, color):
+        if key_or_value == "k":
+            self.k_value == color
+        elif key_or_value == "v":
+            self.v_color == color
         else:
-            self.print_color(self.os[1], Config.v_color, True)
+            print("ERR: Cannot set color, key_or_value flag incorrectly set")
+            exit()
         return
 
-    def system():
-        self.print_color("System: ", Config.k_color, False)
-        self.print_color(self.os[2] + " " + self.os[4], Config.v_color, True)
-        return
-
-    def current_time():
-        self.print_color("Current time: ", Config.k_color, False)
-        self.print_color(self.time, Config.v_color, True)
+    def logo(self, logo_text, l_color):
+        self.print_color(logo_text, l_color)
         return
     
-    def message():
-        if Config.important == True:
+    def connected_to(self, k_color, v_color):
+        self.print_color("Connected to: ", k_color, False)
+        if self.client != "localhost":
+            self.print_color(self.os[1], v_color, False)
+            self.print_color(" through ", k_color, False)
+            self.print_color(self.client, v_color, True)
+        else:
+            self.print_color(self.os[1], v_color, True)
+        return
+
+    def system(self, k_color, v_color):
+        self.print_color("System: ", k_color, False)
+        self.print_color(self.os[2] + " " + self.os[4], v_color, True)
+        return
+
+    def current_time(self, k_color, v_color):
+        self.print_color("Current time: ", k_color, False)
+        self.print_color(self.time, v_color, True)
+        return
+    
+    def message(self, message, v_color, important = True):
+        if important == True:
             self.print_color("*IMPORTANT*", (FG_Colors.Red, None))
-        self.print_color(Config.message, Config.v_color, True)
+        self.print_color(message, v_color, True)
         return
 
     def print_color(self, text, color = None, newline = True):
-        if fg_color != None:
+        if color[0] != None:
             print(color[0].value, end="")
-        if bg_color != None:
+        if color[1] != None:
             print(color[1].value, end="")
         
         if newline != False:
@@ -72,23 +81,12 @@ class Login:
         
         print(FG_Colors.Reset.value, end="")
         print(BG_Colors.Reset.value, end="")
-        return
-        
-            
+        return      
 
     def clear(self):
         print("\x1B[2J", end="")
         return
 
-
-
     def refresh(self):
         self.__init__
         return
-    
-
-
-# --- Main ---
-
-if __name__ == "__main__":
-    Config.display()
