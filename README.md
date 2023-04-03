@@ -7,6 +7,7 @@ A customizable python script used to display login information.
 - Assignable foreground and background colors for both key and value
 - Informs the user the $SSH_CLIENT if applicable
 - Customizable display() function to enable/disable different modules and change their location.
+- Eeasily expandable using python.
 
 ## Usage:
 Enabled by adding a command to the end of your .bashrc, .zshrc, etc...
@@ -62,7 +63,7 @@ Unauthorized use or access is regarded as a criminal act is subject to civil and
         login.message(Config.message, Config.v_color, Config.important)
 ```
 
-This generates an output(Color not shown):
+This generates an output (localhost/127.0.0.1 does not show as ssh connection, used as example):
 <img width="730" alt="Screenshot 2023-03-29 at 6 07 32 PM" src="https://user-images.githubusercontent.com/101080594/228687737-b4652162-736e-41ce-b3b2-5bdb92e4c965.png">
 
 ## Current roadmap:
