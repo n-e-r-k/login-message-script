@@ -28,16 +28,6 @@ class Login:
 
         self.time = time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime())
 
-    def set_color(self, key_or_value, color):
-        if key_or_value == "k":
-            self.k_value == color
-        elif key_or_value == "v":
-            self.v_color == color
-        else:
-            print("ERR: Cannot set color, key_or_value flag incorrectly set")
-            exit()
-        return
-
     def logo(self, logo_text, l_color):
         self.print_color(logo_text, l_color)
         return
