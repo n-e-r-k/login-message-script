@@ -5,9 +5,9 @@ A customizable python script used to display login information.
 - Configured to display ASCII logo
 - Customizable login message
 - Assignable foreground and background colors for both key and value
-- Informs the user the $SSH_CLIENT if applicable
-- Customizable display() function to enable/disable different modules and change their location.
-- Eeasily expandable using python.
+- Informs the user the `$SSH_CLIENT` if applicable
+- Customizable `Config.display()` function to enable/disable different modules and change their location.
+- Easily expandable using python.
 
 ## Usage:
 Enabled by adding a command to the end of your .bashrc, .zshrc, etc...
@@ -66,5 +66,48 @@ Unauthorized use or access is regarded as a criminal act is subject to civil and
 This generates an output (localhost/127.0.0.1 does not show as ssh connection, used as example):
 <img width="730" alt="Screenshot 2023-03-29 at 6 07 32 PM" src="https://user-images.githubusercontent.com/101080594/228687737-b4652162-736e-41ce-b3b2-5bdb92e4c965.png">
 
+## Install:
+### Clone the repository:
+```bash
+git clone https://github.com/n-e-r-k/login-message-script/
+```
+
+### Move into the repository:
+```bash
+cd login-message-script
+```
+
+### Run install script for your system:
+- Linux (Bash)
+```bash
+./install/install_bash.sh
+```
+    
+- Linux (ZSH)
+```bash
+./install/install_zsh.sh
+```
+    
+- MacOS
+```bash
+./install/install_macos.sh
+```
+    
+OR
+
+### Manual install:
+- Move the login directory to the users home directory as `.login` (hidden file)
+```bash
+cp login/ ~/.login
+```
+
+- Add the following line to the end of your terminal config file (i.e. .bashrc, .zshrc, etc...)
+```bash
+echo "python3 /home/$USER/.login/launch.py" >> /home/$USER/.bashrc
+```
+*Note:* Make sure to change `.bashrc` with your terminals config file.
+
+### Edit config file:
+- Use a text editor to modify `~/.login/config.py`
 ## Current roadmap:
 Check the TODO.md to see the current progress on development.
